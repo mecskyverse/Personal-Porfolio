@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './About.scss'
-
+import { images } from '../../constants'
 const abouts = [
-    { title: 'Web Development', description: 'I am good at Web Devlopment', imgUrl: '' },
-    { title: 'Blockchain Development', description: ' I can code Dapps and Smart Contracts', imgUrl: '' },
-    { title: 'Frontend Development', description: 'React is what I use for my Frontend Development', imgUrl: '' },
+    { title: 'Web Development', description: 'I am good at Web Devlopment', imgUrl: images.about01 },
+    { title: 'Blockchain Development', description: ' I can code Dapps and Smart Contracts', imgUrl: images.about02 },
+    { title: 'Frontend Development', description: 'React is what I use for my Frontend Development', imgUrl: images.about03 },
     { title: 'Blogger', description: 'I am also good at Technical Writing', imgUrl: '' }
 ]
 const About = () => {

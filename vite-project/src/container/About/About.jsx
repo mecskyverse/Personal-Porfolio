@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './About.scss'
 import { urlFor, client } from '../../client'
+import { AppWrap } from '../../wrapper'
 
 const About = () => {
     const [abouts, setAbouts] = useState([])
@@ -13,7 +14,7 @@ const About = () => {
 
     return (
         <>
-            <h2 className='head-text'>I know that <span>Good Design</span>
+            <h2 className='head-text'>I know that <span>Good Apps</span>
                 <br />
                 means <span>Good Business</span>
             </h2>
@@ -36,4 +37,4 @@ const About = () => {
     )
 }
 
-export default About
+export default AppWrap(About, 'about')

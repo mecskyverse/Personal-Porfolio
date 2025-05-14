@@ -25,6 +25,18 @@ export default {
             name:'feedback',
             title:'Feedback',
             type:'string'
+        },
+        {
+            name:'profileUrl',
+            title:'Profile URL',
+            type:'url',
+            description: 'LinkedIn, personal website, or other profile URL'
+        },
+        {
+            name:'proofUrl',
+            title:'Proof URL',
+            type:'url',
+            description: 'URL to the proof or testimonial source. Users will be redirected here when clicking on the testimonial card'
         }
     ]
 }

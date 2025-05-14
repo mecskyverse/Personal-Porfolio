@@ -16,8 +16,6 @@ const Work = () => {
         const query = '*[_type == "works"]';
         client.fetch(query)
             .then(data => {
-                console.log("tryinnggg")
-                console.log(data)
                 setWork(data)
                 setFilterWork(data);
             })
@@ -36,7 +34,6 @@ const Work = () => {
             }
         }, 500);
     }
-    console.log(work, filterWork);
     return (
         <>
             <h2 className='head-text'>My Creative <span>Portfolio</span></h2>

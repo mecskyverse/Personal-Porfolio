@@ -1,13 +1,37 @@
-import sanityClient from '@sanity/client'
+import { createClient } from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
-export const client = sanityClient({
-    projectId: import.meta.env.VITE_PROJECT_ID,
-    dataset:'production',
-    apiVersion:'2022-02-01',
-    useCdn:true,
-    token: import.meta.env.VITE_PROJECT_TOKEN,
+
+const projectId = import.meta.env.VITE_PROJECT_ID;
+const dataset = 'production';
+
+// Create the client
+export const client = createClient({
+  projectId,
+  dataset,
+  apiVersion: '2023-05-03',
+  useCdn: true,
+  token: import.meta.env.VITE_PROJECT_TOKEN,
 });
 
-const builder = imageUrlBuilder(client);
-export const urlFor = (source) =>builder.image(source)
+
+// Create the builder
+const builder = imageUrlBuilder({
+  projectId,
+  dataset,
+});
+
+export const urlFor = (source) => {
+  if (!source || !source.asset) {
+    console.warn('Invalid image source:', source);
+    return '';
+  }
+  
+  // Note: We're directly instantiating the builder with the configuration
+  try {
+    return builder.image(source).url();
+  } catch (error) {
+    console.error('Error building URL:', error);
+    return '';
+  }
+}

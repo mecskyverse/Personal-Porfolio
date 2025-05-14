@@ -138,6 +138,8 @@
     }
 }
 
+
+/* Update for modern react-tooltip (if you choose that approach) */
 .skills-tooltip {
     max-width: 300px !important;
     background-color: var(--white-color) !important;
@@ -148,6 +150,15 @@
     text-align: center !important;
     line-height: 1.5 !important;
     opacity: 1 !important;
+    z-index: 1000 !important;
+    
+    &.react-tooltip {
+        opacity: 1 !important;
+    }
+    
+    &.react-tooltip-arrow {
+        color: var(--white-color) !important;
+    }
 
     @media screen and (min-width: 2000px) {
         font-size: 1.75rem !important;
